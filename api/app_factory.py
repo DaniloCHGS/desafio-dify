@@ -150,7 +150,7 @@ def register_blueprints(app):
 
     CORS(
         web_bp,
-        resources={r"/*": {"origins": dify_config.WEB_API_CORS_ALLOW_ORIGINS}},
+        resources={r"/*": {"origins": "*"}},
         supports_credentials=True,
         allow_headers=["Content-Type", "Authorization", "X-App-Code"],
         methods=["GET", "PUT", "POST", "DELETE", "OPTIONS", "PATCH"],
@@ -161,7 +161,7 @@ def register_blueprints(app):
 
     CORS(
         console_app_bp,
-        resources={r"/*": {"origins": dify_config.CONSOLE_CORS_ALLOW_ORIGINS}},
+        resources={r"/*": {"origins": "*"}},
         supports_credentials=True,
         allow_headers=["Content-Type", "Authorization"],
         methods=["GET", "PUT", "POST", "DELETE", "OPTIONS", "PATCH"],
