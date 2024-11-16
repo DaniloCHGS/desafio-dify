@@ -11,5 +11,9 @@
       "src": "/(.*)",
       "dest": "app.py"
     }
-  ]
+  ],
+  "env": {
+    "PYTHON_VERSION": "3.10.0"
+  },
+  "buildCommand": "poetry install && poetry run python app.py"
 }
