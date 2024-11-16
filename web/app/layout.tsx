@@ -1,28 +1,28 @@
-import type { Viewport } from "next";
-import I18nServer from "./components/i18n-server";
-import BrowserInitor from "./components/browser-initor";
-import SentryInitor from "./components/sentry-initor";
-import { getLocaleOnServer } from "@/i18n/server";
-import "./styles/globals.css";
-import "./styles/markdown.scss";
+import type { Viewport } from 'next'
+import I18nServer from './components/i18n-server'
+import BrowserInitor from './components/browser-initor'
+import SentryInitor from './components/sentry-initor'
+import { getLocaleOnServer } from '@/i18n/server'
+import './styles/globals.css'
+import './styles/markdown.scss'
 
 export const metadata = {
-  title: "Lab[IA]",
-};
+  title: 'Lab[IA]',
+}
 
 export const viewport: Viewport = {
-  width: "device-width",
+  width: 'device-width',
   initialScale: 1,
   maximumScale: 1,
-  viewportFit: "cover",
+  viewportFit: 'cover',
   userScalable: false,
-};
+}
 
 const LocaleLayout = ({ children }: { children: React.ReactNode }) => {
-  const locale = getLocaleOnServer();
+  const locale = getLocaleOnServer()
 
   return (
-    <html lang={locale ?? "pt-BR"} className="h-full" data-theme="light">
+    <html lang={locale ?? 'pt-BR'} className="h-full" data-theme="light">
       <head>
         <meta name="theme-color" content="#FFFFFF" />
         <meta name="mobile-web-app-capable" content="yes" />
@@ -53,7 +53,7 @@ const LocaleLayout = ({ children }: { children: React.ReactNode }) => {
         </BrowserInitor>
       </body>
     </html>
-  );
-};
+  )
+}
 
-export default LocaleLayout;
+export default LocaleLayout

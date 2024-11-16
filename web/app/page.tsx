@@ -1,5 +1,5 @@
-import Link from "next/link";
-import Loading from "@/app/components/base/loading";
+import Link from 'next/link'
+import Loading from '@/app/components/base/loading'
 
 const Home = async () => {
   return (
@@ -11,7 +11,7 @@ const Home = async () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home
