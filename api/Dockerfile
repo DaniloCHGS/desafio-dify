@@ -36,10 +36,11 @@ FROM base AS production
 ENV FLASK_APP=app.py
 ENV EDITION=SELF_HOSTED
 ENV DEPLOY_ENV=PRODUCTION
-ENV CONSOLE_API_URL=http://127.0.0.1:5001
-ENV CONSOLE_WEB_URL=http://127.0.0.1:3000
-ENV SERVICE_API_URL=http://127.0.0.1:5001
-ENV APP_WEB_URL=http://127.0.0.1:3000
+ENV CONSOLE_API_URL=https://desafio-dify-quy5m5whs-danilochgs-projects.vercel.app
+ENV CONSOLE_WEB_URL=https://console.cloud.google.com/cloud-build/builds;region=global/cf727b37-dc96-4a06-9bc0-ac4f562b2844?authuser=1&hl=pt-BR&project=desafio-dify
+ENV SERVICE_API_URL=https://desafio-dify-quy5m5whs-danilochgs-projects.vercel.app
+ENV APP_WEB_URL=https://console.cloud.google.com/cloud-build/builds;region=global/cf727b37-dc96-4a06-9bc0-ac4f562b2844?authuser=1&hl=pt-BR&project=desafio-dify
+
 
 EXPOSE 5001
 
