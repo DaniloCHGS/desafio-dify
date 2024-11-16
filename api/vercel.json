@@ -3,7 +3,7 @@
   "builds": [
     {
       "src": "app.py",
-      "use": "@vercel/poetry"
+      "use": "@vercel/python"
     }
   ],
   "routes": [
