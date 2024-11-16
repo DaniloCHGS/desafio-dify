@@ -150,7 +150,7 @@ def register_blueprints(app):
 
     CORS(
         web_bp,
-        resources={r"/*": {"origins": "*"}},
+        resources={r"/*": {"origins": "https://desafio-dify-477523631293.us-central1.run.app/"}},
         supports_credentials=True,
         allow_headers=["Content-Type", "Authorization", "X-App-Code"],
         methods=["GET", "PUT", "POST", "DELETE", "OPTIONS", "PATCH"],
@@ -161,7 +161,7 @@ def register_blueprints(app):
 
     CORS(
         console_app_bp,
-        resources={r"/*": {"origins": "*"}},
+        resources={r"/*": {"origins": "https://desafio-dify-477523631293.us-central1.run.app/"}},
         supports_credentials=True,
         allow_headers=["Content-Type", "Authorization"],
         methods=["GET", "PUT", "POST", "DELETE", "OPTIONS", "PATCH"],
