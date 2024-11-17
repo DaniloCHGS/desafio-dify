@@ -1,5 +1,5 @@
 # base image
-FROM node:20.11-alpine3.19 AS base
+FROM node:20-alpine3.20 AS base
 LABEL maintainer="takatost@gmail.com"
 
 # if you located in China, you can use aliyun mirror to speed up
@@ -36,8 +36,8 @@ FROM base AS production
 ENV NODE_ENV=production
 ENV EDITION=SELF_HOSTED
 ENV DEPLOY_ENV=PRODUCTION
-ENV CONSOLE_API_URL=https://desafio-dify-d895pqzvb-danilochgs-projects.vercel.app
-ENV APP_API_URL=https://desafio-dify-d895pqzvb-danilochgs-projects.vercel.app
+ENV CONSOLE_API_URL=http://127.0.0.1:5001
+ENV APP_API_URL=http://127.0.0.1:5001
 ENV PORT=3000
 ENV NEXT_TELEMETRY_DISABLED=1
 
