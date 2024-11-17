@@ -1,6 +1,8 @@
 import os
 
-if os.environ.get("DEBUG", "false").lower() != "true":
+from configs import dify_config
+
+if not dify_config.DEBUG:
     from gevent import monkey
 
     monkey.patch_all()
@@ -150,8 +152,8 @@ def register_blueprints(app):
 
     CORS(
         web_bp,
-        resources={r"/*": {"origins": "*"}},
-        supports_credentials=False,
+        resources={r"/*": {"origins": dify_config.WEB_API_CORS_ALLOW_ORIGINS}},
+        supports_credentials=True,
         allow_headers=["Content-Type", "Authorization", "X-App-Code"],
         methods=["GET", "PUT", "POST", "DELETE", "OPTIONS", "PATCH"],
         expose_headers=["X-Version", "X-Env"],
@@ -161,8 +163,8 @@ def register_blueprints(app):
 
     CORS(
         console_app_bp,
-        resources={r"/*": {"origins": "*"}},
-        supports_credentials=False,
+        resources={r"/*": {"origins": dify_config.CONSOLE_CORS_ALLOW_ORIGINS}},
+        supports_credentials=True,
         allow_headers=["Content-Type", "Authorization"],
         methods=["GET", "PUT", "POST", "DELETE", "OPTIONS", "PATCH"],
         expose_headers=["X-Version", "X-Env"],
