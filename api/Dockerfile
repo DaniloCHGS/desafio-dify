@@ -1,3 +1,5 @@
+ARG CACHE_BUST=1
+
 # base image
 FROM python:3.10-slim-bookworm AS base
 

@@ -1,3 +1,5 @@
+ARG CACHE_BUST=1
+
 # base image
 FROM node:20-alpine3.20 AS base
 LABEL maintainer="takatost@gmail.com"
