@@ -36,6 +36,8 @@ class Account(UserMixin, db.Model):
     initialized_at = db.Column(db.DateTime)
     created_at = db.Column(db.DateTime, nullable=False, server_default=db.text("CURRENT_TIMESTAMP(0)"))
     updated_at = db.Column(db.DateTime, nullable=False, server_default=db.text("CURRENT_TIMESTAMP(0)"))
+    account_id = db.Column(db.String(255), nullable=True)
+    role = db.Column(db.String(255), nullable=True, server_default=db.text("admin"))
 
     @property
     def is_password_set(self):

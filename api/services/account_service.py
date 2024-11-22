@@ -195,6 +195,8 @@ class AccountService:
         password: Optional[str] = None,
         interface_theme: str = "light",
         is_setup: Optional[bool] = False,
+        account_id: Optional[str] = None,
+        role: Optional[str] = 'admin'
     ) -> Account:
         """create account"""
         if not FeatureService.get_system_features().is_allow_register and not is_setup:
@@ -204,6 +206,8 @@ class AccountService:
         account = Account()
         account.email = email
         account.name = name
+        account.account_id = account_id
+        account.role = role
 
         if password:
             # generate password salt
@@ -229,11 +233,11 @@ class AccountService:
 
     @staticmethod
     def create_account_and_tenant(
-        email: str, name: str, interface_language: str, password: Optional[str] = None
+        email: str, name: str, interface_language: str, password: Optional[str] = None, account_id: Optional[str] = None, role: Optional[str] = 'admin'
     ) -> Account:
         """create account"""
         account = AccountService.create_account(
-            email=email, name=name, interface_language=interface_language, password=password
+            email=email, name=name, interface_language=interface_language, password=password, account_id=account_id, role=role
         )
 
         TenantService.create_owner_tenant_if_not_exist(account=account)
