@@ -1,21 +1,56 @@
 .main {
-  @apply w-full sm:w-96 xl:w-[360px] flex-shrink-0 p-0 sm:px-6 sm:py-5 overflow-y-auto border-none sm:border-l-gray-100 sm:border-l;
+  width: 100%;
+  flex-shrink: 0;
+  padding: 0;
+  overflow-y: auto;
+  border: none;
+
+  @media (min-width: 640px) {
+    width: 24rem;
+    padding: 1.25rem 1.5rem;
+    border-left: 1px solid #f3f4f6;
+  }
+
+  @media (min-width: 1280px) {
+    width: 360px;
+  }
 }
 .operationWrapper {
-  @apply flex flex-col items-center gap-4 mt-7 mb-8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  margin-top: 7px;
+  margin-bottom: 8px;
 }
 .iconWrapper {
-  @apply box-border cursor-pointer h-8 w-8 inline-flex items-center justify-center;
-  @apply border-[#EAECF5] border rounded-lg hover:border-primary-200 hover:bg-primary-25 hover:shadow-md;
+  display: box;
+  cursor: pointer;
+  height: 2rem;
+  width: 2rem;
+  inline-flex: items-center;
+  justify-content: center;
+  border: 1px solid #eaecf5;
+  border-radius: 0.5rem;
 }
 .icon {
-  @apply h-4 w-4 stroke-current stroke-[2px] text-gray-700 group-hover:stroke-primary-600;
+  height: 1rem;
+  width: 1rem;
+  stroke: currentColor;
+  stroke-width: 2px;
+  color: #4b5563;
 }
 .iconCheck {
-  @apply border-primary-400 border-[1.5px] bg-primary-25 shadow-sm !important;
+  border: 1.5px solid #d92d20;
+  background-color: #f3f4f6;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05) !important;
 }
 .commonIcon {
-  @apply w-4 h-4 inline-block align-middle bg-gray-700 hover:bg-primary-600;
+  width: 1rem;
+  height: 1rem;
+  display: inline-block;
+  vertical-align: middle;
+  background-color: #4b5563;
 }
 .bookOpenIcon {
   mask-image: url(../../assets/bookOpen.svg);
@@ -39,76 +74,169 @@
   mask-image: url(../../assets/messageTextCircle.svg);
 }
 .radioGroup {
-  @apply !bg-transparent !gap-2;
+  background-color: transparent !important;
+  gap: 2px;
 }
 .radio {
-  @apply !p-0 !mr-0 hover:bg-transparent !rounded-lg;
+  padding: 0 !important;
+  margin-right: 0 !important;
+  border-radius: 0.5rem;
+  background-color: transparent;
 }
 .title {
-  @apply text-sm text-gray-800 font-medium leading-6;
+  font-size: 0.875rem;
+  color: #4b5563;
+  font-weight: 500;
+  line-height: 1.5;
 }
 .titleWrapper {
-  @apply flex items-center justify-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 .desc {
-  @apply text-gray-500 text-xs;
+  color: #6b7280;
+  font-size: 0.75rem;
 }
 .fieldInfo {
-  /* height: 1.75rem; */
   min-height: 1.75rem;
-  @apply flex flex-row items-center gap-4;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4px;
 }
 .fieldInfo > .label {
-  @apply w-2/5 max-w-[128px] text-gray-500 text-xs font-medium overflow-hidden text-ellipsis whitespace-nowrap;
+  width: 40%;
+  max-width: 128px;
+  color: #6b7280;
+  font-size: 0.75rem;
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .fieldInfo > .value {
   overflow-wrap: anywhere;
-  @apply w-3/5 text-gray-700 font-normal text-xs;
+  width: 60%;
+  color: #374151;
+  font-weight: normal;
+  font-size: 0.75rem;
 }
 .changeTip {
-  @apply text-[#D92D20] text-xs text-center;
+  color: #d92d20;
+  font-size: 0.75rem;
+  text-align: center;
 }
 .opBtnWrapper {
-  @apply flex items-center justify-center gap-1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1px;
 }
 .opBtn {
-  @apply h-6 w-14 px-0 text-xs font-medium rounded-md !important;
+  height: 1.5rem;
+  width: 3.5rem;
+  padding: 0;
+  font-size: 0.75rem;
+  font-weight: 500;
+  border-radius: 0.375rem !important;
 }
 .opEditBtn {
   box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
-  @apply border-[0.5px] border-gray-200 bg-white !important;
+  border: 0.5px solid #e5e7eb;
+  background-color: white !important;
 }
 .opCancelBtn {
-  @apply border-none bg-gray-50 font-medium text-gray-700 hover:bg-gray-100 !important;
+  border: none;
+  background-color: #f9fafb;
+  font-weight: 500;
+  color: #374151;
+  &:hover {
+    background-color: #f3f4f6 !important;
+  }
 }
 .opSaveBtn {
-  @apply border-primary-700 border-[0.5px] font-medium hover:border-none !important;
+  border: 0.5px solid #3b82f6;
+  font-weight: 500;
+  &:hover {
+    border: none !important;
+  }
 }
 .opIcon {
-  @apply h-3 w-3 stroke-current stroke-2 mr-1;
+  height: 0.75rem;
+  width: 0.75rem;
+  stroke: currentColor;
+  stroke-width: 2;
+  margin-right: 0.25rem;
 }
 .select {
-  @apply h-7 py-0 pl-2 text-xs bg-gray-50 hover:bg-gray-100 rounded-md shadow-none !important;
+  height: 1.75rem;
+  padding: 0 0 0 0.5rem;
+  font-size: 0.75rem;
+  background-color: #f9fafb;
+  &:hover {
+    background-color: #f3f4f6;
+  }
+  border-radius: 0.375rem;
+  box-shadow: none !important;
 }
 .selectWrapper {
-  @apply !h-7 w-full
+  height: 1.75rem !important;
+  width: 100%;
 }
 .selectWrapper ul {
-  @apply text-xs
+  font-size: 0.75rem;
 }
 .selectWrapper li {
-  @apply flex items-center h-8
+  display: flex;
+  align-items: center;
+  height: 2rem;
 }
 .documentTypeShow {
-  @apply flex items-center text-xs text-gray-500;
+  display: flex;
+  align-items: center;
+  font-size: 0.75rem;
+  color: #6b7280;
 }
 .iconShow {
   mask-size: contain;
-  @apply w-3 h-3 bg-gray-500 hover:bg-none mr-1 !important;
+  width: 0.75rem;
+  height: 0.75rem;
+  background-color: #6b7280;
+  &:hover {
+    background-color: none;
+  }
+  margin-right: 0.25rem !important;
 }
 .textArea {
-  @apply placeholder:text-gray-400 bg-gray-50 px-2 py-1 caret-primary-600 rounded-md hover:bg-gray-100 focus-visible:outline-none focus-visible:bg-white focus-visible:border focus-visible:border-gray-300 hover:shadow-[0_1px_2px_rgba(16,24,40,0.05);];
+  &::placeholder {
+    color: #9ca3af;
+  }
+  background-color: #f9fafb;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  caret-color: #2563eb;
+  border-radius: 0.375rem;
+}
+
+.textArea:hover {
+  background-color: #f3f4f6;
+}
+
+.textArea:focus-visible {
+  outline: none;
+  background-color: white;
+  border: 1px solid #d1d5db;
+  box-shadow: 0 1px 2px rgba(16, 24, 40, 0.05);
 }
 .input {
-  @apply bg-gray-50 hover:bg-gray-100 focus-visible:bg-white !important
+  background-color: #f9fafb;
+  &:hover {
+    background-color: #f3f4f6;
+  }
+  &:focus-visible {
+    background-color: white !important;
+  }
 }
