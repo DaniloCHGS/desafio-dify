@@ -244,7 +244,7 @@ services:
   api:
     build:
       context: ../api
-    image: danilochagasdev/desafio-dify-api:latest
+    image: danilochagasdev/desafio-dify-api-build:latest
     restart: always
     environment:
       # Use the shared environment variables.
@@ -285,7 +285,7 @@ services:
   web:
     build:
       context: ../web
-    image: danilochagasdev/desafio-dify-web:latest
+    image: danilochagasdev/desafio-dify-web-build:latest
     restart: always
     environment:
       CONSOLE_API_URL: ${CONSOLE_API_URL:-}
