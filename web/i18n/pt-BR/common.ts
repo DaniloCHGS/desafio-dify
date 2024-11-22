@@ -131,6 +131,7 @@ const translation = {
     newApp: 'Novo App',
     newDataset: 'Criar Conhecimento',
     tools: 'Ferramentas',
+    users: 'Usuários',
   },
   userProfile: {
     settings: 'Configurações',

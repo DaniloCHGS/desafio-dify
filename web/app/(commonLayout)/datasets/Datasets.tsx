@@ -39,14 +39,11 @@ type Props = {
   keywords: string
 }
 
-const Datasets = ({
-  containerRef,
-  tags,
-  keywords,
-}: Props) => {
+const Datasets = ({ containerRef, tags, keywords }: Props) => {
   const { isCurrentWorkspaceEditor } = useAppContext()
   const { data, isLoading, setSize, mutate } = useSWRInfinite(
-    (pageIndex: number, previousPageData: DataSetListResponse) => getKey(pageIndex, previousPageData, tags, keywords),
+    (pageIndex: number, previousPageData: DataSetListResponse) =>
+      getKey(pageIndex, previousPageData, tags, keywords),
     fetchDatasets,
     { revalidateFirstPage: false, revalidateAll: true },
   )
@@ -57,7 +54,7 @@ const Datasets = ({
 
   useEffect(() => {
     loadingStateRef.current = isLoading
-    document.title = `${t('dataset.knowledge')} - Dify`
+    document.title = `${t('dataset.knowledge')} - Lab[IA]`
   }, [isLoading])
 
   useEffect(() => {
@@ -75,11 +72,13 @@ const Datasets = ({
   }, [])
 
   return (
-    <nav className='grid content-start grid-cols-1 gap-4 px-12 pt-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 grow shrink-0'>
-      { isCurrentWorkspaceEditor && <NewDatasetCard ref={anchorRef} /> }
-      {data?.map(({ data: datasets }) => datasets.map(dataset => (
-        <DatasetCard key={dataset.id} dataset={dataset} onSuccess={mutate} />),
-      ))}
+    <nav className="grid content-start grid-cols-1 gap-4 px-12 pt-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 grow shrink-0">
+      {isCurrentWorkspaceEditor && <NewDatasetCard ref={anchorRef} />}
+      {data?.map(({ data: datasets }) =>
+        datasets.map(dataset => (
+          <DatasetCard key={dataset.id} dataset={dataset} onSuccess={mutate} />
+        )),
+      )}
     </nav>
   )
 }

@@ -16,10 +16,10 @@ export enum AuthHeaderPrefix {
 }
 
 export type Credential = {
-  'auth_type': AuthType
-  'api_key_header'?: string
-  'api_key_value'?: string
-  'api_key_header_prefix'?: AuthHeaderPrefix
+  auth_type: AuthType
+  api_key_header?: string
+  api_key_value?: string
+  api_key_header_prefix?: AuthHeaderPrefix
 }
 
 export enum CollectionType {
@@ -47,6 +47,12 @@ export type Collection = {
   is_team_authorization: boolean
   allow_delete: boolean
   labels: string[]
+}
+
+export type UserCollection = {
+  id: string
+  name: string
+  email: string
 }
 
 export type ToolParameter = {

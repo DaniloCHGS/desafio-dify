@@ -12,6 +12,7 @@ import EnvNav from './env-nav'
 import ExploreNav from './explore-nav'
 import ToolsNav from './tools-nav'
 import GithubStar from './github-star'
+import UsersLink from './users-link'
 import { WorkspaceProvider } from '@/context/workspace-context'
 import { useAppContext } from '@/context/app-context'
 import LogoSite from '@/app/components/base/logo/logo-site'
@@ -85,6 +86,9 @@ const Header = () => {
           )}
           {!isCurrentWorkspaceDatasetOperator && (
             <ToolsNav className={navClassName} />
+          )}
+          {!isCurrentWorkspaceDatasetOperator && (
+            <UsersLink className={navClassName} />
           )}
         </div>
       )}
